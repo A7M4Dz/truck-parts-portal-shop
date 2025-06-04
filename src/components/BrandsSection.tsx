@@ -1,27 +1,27 @@
 
 const BrandsSection = () => {
   const brands = [
-    { name: "DAS", logo: "🔧" },
-    { name: "Haldex", logo: "🛠️" },
-    { name: "SACHS", logo: "⚙️" },
-    { name: "MAHLE", logo: "🔩" },
-    { name: "LBI", logo: "🔨" },
-    { name: "TIMP", logo: "⚡" },
-    { name: "ZF", logo: "🏭" },
-    { name: "TEXTAR", logo: "🚛" },
-    { name: "HELLA", logo: "💡" },
-    { name: "TKT", logo: "🔧" },
-    { name: "KNORR", logo: "🛡️" },
-    { name: "Valeo", logo: "⚙️" },
-    { name: "WABCO", logo: "🚚" },
-    { name: "MERITOR", logo: "🔩" },
-    { name: "BERAL", logo: "🔨" },
-    { name: "Cofan", logo: "🛠️" },
-    { name: "CAMERE", logo: "📷" },
-    { name: "BOGIE", logo: "⚡" },
-    { name: "ENGINE BEARINGS", logo: "⚙️" },
-    { name: "RIE", logo: "🔧" },
-    { name: "BOSCH", logo: "🏭" },
+    { name: "DAS", logo: "/placeholder.svg" },
+    { name: "Haldex", logo: "/placeholder.svg" },
+    { name: "SACHS", logo: "/placeholder.svg" },
+    { name: "MAHLE", logo: "/placeholder.svg" },
+    { name: "LBI", logo: "/placeholder.svg" },
+    { name: "TIMP", logo: "/placeholder.svg" },
+    { name: "ZF", logo: "/placeholder.svg" },
+    { name: "TEXTAR", logo: "/placeholder.svg" },
+    { name: "HELLA", logo: "/placeholder.svg" },
+    { name: "TKT", logo: "/placeholder.svg" },
+    { name: "KNORR", logo: "/placeholder.svg" },
+    { name: "Valeo", logo: "/placeholder.svg" },
+    { name: "WABCO", logo: "/placeholder.svg" },
+    { name: "MERITOR", logo: "/placeholder.svg" },
+    { name: "BERAL", logo: "/placeholder.svg" },
+    { name: "Cofan", logo: "/placeholder.svg" },
+    { name: "CAMERE", logo: "/placeholder.svg" },
+    { name: "BOGIE", logo: "/placeholder.svg" },
+    { name: "ENGINE BEARINGS", logo: "/placeholder.svg" },
+    { name: "RIE", logo: "/placeholder.svg" },
+    { name: "BOSCH", logo: "/placeholder.svg" },
   ];
 
   return (
@@ -41,9 +41,11 @@ const BrandsSection = () => {
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col items-center justify-center h-24 group cursor-pointer"
             >
-              <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-200">
-                {brand.logo}
-              </div>
+              <img 
+                src={brand.logo} 
+                alt={`${brand.name} logo`}
+                className="w-12 h-8 object-contain mb-2 group-hover:scale-110 transition-transform duration-200"
+              />
               <span className="text-sm font-medium text-gray-700 text-center">
                 {brand.name}
               </span>
