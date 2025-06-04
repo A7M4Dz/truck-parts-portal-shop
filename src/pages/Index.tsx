@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import BrandsSection from "@/components/BrandsSection";
 import ProductsSection from "@/components/ProductsSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <BrandsSection />
       <ProductsSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
