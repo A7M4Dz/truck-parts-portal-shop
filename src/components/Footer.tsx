@@ -1,24 +1,33 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer 
+      className="relative text-white py-20 overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-gray-800/90"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">TruckParts Pro</h3>
-            <p className="text-gray-400 mb-4 max-w-md">
+            <h3 className="text-2xl font-bold mb-6 text-blue-400">TruckParts Pro</h3>
+            <p className="text-gray-300 mb-8 max-w-md leading-relaxed text-lg">
               Leading supplier of commercial truck parts with over 20 years of experience. 
-              We provide quality parts from trusted manufacturers worldwide.
+              We provide quality OEM parts from trusted manufacturers worldwide to keep your fleet running strong.
             </p>
-            <div className="flex space-x-4">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+            <div className="flex space-x-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
                 📧
               </div>
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
                 📞
               </div>
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
                 📍
               </div>
             </div>
@@ -26,28 +35,28 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Products</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+            <h4 className="text-xl font-bold mb-6 text-blue-400">Quick Links</h4>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">About Us</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Products</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Services</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Contact</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2 text-gray-400">
-              <p>📧 info@truckpartspro.com</p>
-              <p>📞 +1 (555) 123-4567</p>
-              <p>📍 123 Industrial Blvd, City, State 12345</p>
+            <h4 className="text-xl font-bold mb-6 text-blue-400">Contact Info</h4>
+            <div className="space-y-4 text-gray-300">
+              <p className="flex items-center text-lg"><span className="mr-3">📧</span> info@truckpartspro.com</p>
+              <p className="flex items-center text-lg"><span className="mr-3">📞</span> +1 (555) 123-4567</p>
+              <p className="flex items-center text-lg"><span className="mr-3">📍</span> 123 Industrial Blvd, City, State 12345</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 TruckParts Pro. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-16 pt-8 text-center text-gray-400">
+          <p className="text-lg">&copy; 2024 TruckParts Pro. All rights reserved. | Professional Commercial Vehicle Solutions</p>
         </div>
       </div>
     </footer>

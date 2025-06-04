@@ -25,13 +25,25 @@ const BrandsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Brands</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We partner with the world's leading manufacturers to bring you premium quality truck parts
+    <section 
+      className="relative py-24 overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-gray-50/90"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Trusted by <span className="text-blue-600">Industry Leaders</span>
+          </h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            We partner with the world's most respected manufacturers to deliver premium quality 
+            truck parts that keep your business moving forward
           </p>
         </div>
 
@@ -39,12 +51,12 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col items-center justify-center h-24 group cursor-pointer"
+              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center h-32 group cursor-pointer border border-gray-200/50 hover:border-blue-300"
             >
-              <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-200">
+              <div className="text-3xl mb-3 group-hover:scale-125 transition-transform duration-300">
                 {brand.logo}
               </div>
-              <span className="text-sm font-medium text-gray-700 text-center">
+              <span className="text-sm font-bold text-gray-800 text-center group-hover:text-blue-600 transition-colors duration-300">
                 {brand.name}
               </span>
             </div>
