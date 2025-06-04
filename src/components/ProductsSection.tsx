@@ -11,7 +11,7 @@ const ProductsSection = () => {
       id: 1,
       name: "Heavy Duty Engine Assembly",
       category: "Engine",
-      image: "/placeholder.svg",
+      image: "🔧",
       description: "Complete engine assembly for commercial trucks",
       price: "Contact for pricing",
     },
@@ -19,7 +19,7 @@ const ProductsSection = () => {
       id: 2,
       name: "Air Brake System",
       category: "Brake Parts",
-      image: "/placeholder.svg",
+      image: "🛠️",
       description: "Professional grade air brake components",
       price: "Contact for pricing",
     },
@@ -27,7 +27,7 @@ const ProductsSection = () => {
       id: 3,
       name: "Transmission Gearbox",
       category: "Transmission",
-      image: "/placeholder.svg",
+      image: "⚙️",
       description: "High-performance transmission systems",
       price: "Contact for pricing",
     },
@@ -35,7 +35,7 @@ const ProductsSection = () => {
       id: 4,
       name: "Drive Shaft Assembly",
       category: "Transmission",
-      image: "/placeholder.svg",
+      image: "🔩",
       description: "Durable drive shaft for heavy-duty applications",
       price: "Contact for pricing",
     },
@@ -77,12 +77,8 @@ const ProductsSection = () => {
               key={product.id}
               className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 group"
             >
-              <div className="h-48 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 bg-gray-100 flex items-center justify-center text-6xl group-hover:bg-gray-200 transition-colors duration-200">
+                {product.image}
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
