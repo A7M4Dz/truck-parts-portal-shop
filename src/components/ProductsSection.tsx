@@ -1,43 +1,50 @@
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const { t } = useLanguage();
 
-  const categories = ["All", "Engine", "Brake Parts", "Transmission"];
+  const categories = [
+    { key: "All", label: t('products.category.all') },
+    { key: "Engine", label: t('products.category.engine') },
+    { key: "Brake Parts", label: t('products.category.brake') },
+    { key: "Transmission", label: t('products.category.transmission') }
+  ];
 
   const products = [
     {
       id: 1,
-      name: "Heavy Duty Engine Assembly",
+      name: t('products.heavy.duty.engine'),
       category: "Engine",
       image: "🔧",
-      description: "Complete engine assembly for commercial trucks with warranty",
-      price: "Contact for pricing",
+      description: t('products.engine.description'),
+      price: t('products.contact.pricing'),
     },
     {
       id: 2,
-      name: "Air Brake System",
+      name: t('products.air.brake'),
       category: "Brake Parts",
       image: "🛠️",
-      description: "Professional grade air brake components - OEM quality",
-      price: "Contact for pricing",
+      description: t('products.brake.description'),
+      price: t('products.contact.pricing'),
     },
     {
       id: 3,
-      name: "Transmission Gearbox",
+      name: t('products.transmission.gearbox'),
       category: "Transmission",
       image: "⚙️",
-      description: "High-performance transmission systems for heavy duty",
-      price: "Contact for pricing",
+      description: t('products.transmission.description'),
+      price: t('products.contact.pricing'),
     },
     {
       id: 4,
-      name: "Drive Shaft Assembly",
+      name: t('products.drive.shaft'),
       category: "Transmission",
       image: "🔩",
-      description: "Durable drive shaft for heavy-duty commercial applications",
-      price: "Contact for pricing",
+      description: t('products.drive.description'),
+      price: t('products.contact.pricing'),
     },
   ];
 
@@ -60,11 +67,11 @@ const ProductsSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Premium <span className="text-blue-600">Truck Parts</span>
+            {t('products.title')} <span className="text-blue-600">{t('products.title.highlight')}</span>
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Discover our comprehensive selection of commercial truck parts from leading manufacturers
+            {t('products.description')}
           </p>
         </div>
 
@@ -72,15 +79,15 @@ const ProductsSection = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((category) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={category.key}
+              onClick={() => setActiveCategory(category.key)}
               className={`px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
-                activeCategory === category
+                activeCategory === category.key
                   ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
                   : "bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white hover:text-blue-600 border border-gray-200 shadow-md"
               }`}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>
@@ -103,7 +110,7 @@ const ProductsSection = () => {
                 <div className="flex justify-between items-center">
                   <span className="text-blue-600 font-bold text-lg">{product.price}</span>
                   <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 text-sm font-semibold transform hover:scale-105 shadow-lg">
-                    View Details
+                    {t('products.view.details')}
                   </button>
                 </div>
               </div>

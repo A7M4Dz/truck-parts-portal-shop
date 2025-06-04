@@ -1,5 +1,9 @@
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer 
       className="relative text-white py-20 overflow-hidden"
@@ -15,10 +19,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-6 text-blue-400">TruckParts Pro</h3>
+            <h3 className="text-2xl font-bold mb-6 text-blue-400">{t('company.name')}</h3>
             <p className="text-gray-300 mb-8 max-w-md leading-relaxed text-lg">
-              Leading supplier of commercial truck parts with over 20 years of experience. 
-              We provide quality OEM parts from trusted manufacturers worldwide to keep your fleet running strong.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-6">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
@@ -35,18 +38,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-blue-400">Quick Links</h4>
+            <h4 className="text-xl font-bold mb-6 text-blue-400">{t('footer.quick.links')}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Products</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Services</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">Contact</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">{t('nav.about')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">{t('nav.products')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">{t('nav.careers')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400">{t('nav.contact')}</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-blue-400">Contact Info</h4>
+            <h4 className="text-xl font-bold mb-6 text-blue-400">{t('footer.contact.info')}</h4>
             <div className="space-y-4 text-gray-300">
               <p className="flex items-center text-lg"><span className="mr-3">📧</span> info@truckpartspro.com</p>
               <p className="flex items-center text-lg"><span className="mr-3">📞</span> +1 (555) 123-4567</p>
@@ -56,7 +59,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-16 pt-8 text-center text-gray-400">
-          <p className="text-lg">&copy; 2024 TruckParts Pro. All rights reserved. | Professional Commercial Vehicle Solutions</p>
+          <p className="text-lg">&copy; {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

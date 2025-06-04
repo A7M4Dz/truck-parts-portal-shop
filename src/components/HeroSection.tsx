@@ -1,5 +1,9 @@
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section 
       className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-32 overflow-hidden"
@@ -14,19 +18,18 @@ const HeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            Premium Commercial 
-            <span className="text-blue-400 block">Truck Parts</span>
+            {t('hero.title')}
+            <span className="text-blue-400 block">{t('hero.title.highlight')}</span>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            Keep your fleet running strong with genuine OEM parts from the world's most trusted manufacturers. 
-            Professional quality, competitive prices, fast delivery.
+            {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
-              Browse Our Catalog
+              {t('hero.browse.catalog')}
             </button>
             <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              Get Instant Quote
+              {t('hero.get.quote')}
             </button>
           </div>
           
@@ -34,15 +37,15 @@ const HeroSection = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <div className="text-3xl font-bold text-blue-400">20+</div>
-              <div className="text-gray-300">Years Experience</div>
+              <div className="text-gray-300">{t('hero.years.experience')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <div className="text-3xl font-bold text-blue-400">50K+</div>
-              <div className="text-gray-300">Parts Available</div>
+              <div className="text-gray-300">{t('hero.parts.available')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <div className="text-3xl font-bold text-blue-400">24/7</div>
-              <div className="text-gray-300">Customer Support</div>
+              <div className="text-gray-300">{t('hero.customer.support')}</div>
             </div>
           </div>
         </div>

@@ -1,5 +1,9 @@
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const BrandsSection = () => {
+  const { t } = useLanguage();
+  
   const brands = [
     { name: "DAS", logo: "🔧" },
     { name: "Haldex", logo: "🛠️" },
@@ -38,12 +42,11 @@ const BrandsSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Trusted by <span className="text-blue-600">Industry Leaders</span>
+            {t('brands.title')} <span className="text-blue-600">{t('brands.title.highlight')}</span>
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            We partner with the world's most respected manufacturers to deliver premium quality 
-            truck parts that keep your business moving forward
+            {t('brands.description')}
           </p>
         </div>
 

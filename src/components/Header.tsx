@@ -1,18 +1,21 @@
 
 import { Truck, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigationItems = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "RFQ", href: "#rfq" },
-    { name: "Branches", href: "#branches" },
-    { name: "Careers", href: "#careers" },
-    { name: "Contact Us", href: "#contact" },
+    { name: t('nav.home'), href: "#" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.products'), href: "#products" },
+    { name: t('nav.rfq'), href: "#rfq" },
+    { name: t('nav.branches'), href: "#branches" },
+    { name: t('nav.careers'), href: "#careers" },
+    { name: t('nav.contact'), href: "#contact" },
   ];
 
   return (
@@ -25,26 +28,30 @@ const Header = () => {
               <Truck className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">TruckParts Pro</h1>
-              <p className="text-sm text-gray-600 font-medium">Commercial Vehicle Solutions</p>
+              <h1 className="text-2xl font-bold text-gray-900">{t('company.name')}</h1>
+              <p className="text-sm text-gray-600 font-medium">{t('company.tagline')}</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
-            {navigationItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50"
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-1">
+            <nav className="flex space-x-1">
+              {navigationItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+            <LanguageToggle />
+          </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
