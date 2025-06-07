@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'ar';
@@ -78,7 +77,29 @@ const translations = {
     'footer.description': 'Leading supplier of commercial truck parts in Saudi Arabia with over 10 years of experience. We provide quality OEM parts from MAN, IVECO, and ZF to keep your fleet running strong.',
     'footer.quick.links': 'Quick Links',
     'footer.contact.info': 'Contact Info',
-    'footer.copyright': '2024 ALREEM. All rights reserved. | Commercial Vehicle Solutions'
+    'footer.copyright': '2024 ALREEM. All rights reserved. | Commercial Vehicle Solutions',
+    
+    // Quotation
+    quotation: {
+      title: "Request a",
+      "title.highlight": "Quotation",
+      description: "Get a personalized quote for your truck parts needs. Simply provide your email and describe the parts you're looking for.",
+      form: {
+        title: "Get Your Quote",
+        subtitle: "Fill out the form below and we'll get back to you with a detailed quotation",
+        email: {
+          label: "Email Address",
+          placeholder: "Enter your email address"
+        },
+        parts: {
+          label: "Parts Needed",
+          placeholder: "Describe the parts you need (brand, model, part numbers, quantities, etc.)"
+        },
+        submit: "Request Quotation",
+        submitting: "Submitting..."
+      },
+      success: "Your quotation request has been submitted successfully! We'll get back to you soon."
+    }
   },
   ar: {
     // Header
@@ -148,7 +169,29 @@ const translations = {
     'footer.description': 'مورد رائد لقطع غيار الشاحنات التجارية في المملكة العربية السعودية مع أكثر من 10 سنوات من الخبرة. نوفر قطع غيار أصلية عالية الجودة من مان وإيفيكو و زد إف للحفاظ على قوة أسطولك.',
     'footer.quick.links': 'روابط سريعة',
     'footer.contact.info': 'معلومات الاتصال',
-    'footer.copyright': '2024 الريم. جميع الحقوق محفوظة. | حلول المركبات التجارية'
+    'footer.copyright': '2024 الريم. جميع الحقوق محفوظة. | حلول المركبات التجارية',
+    
+    // Quotation
+    quotation: {
+      title: "طلب",
+      "title.highlight": "عرض سعر",
+      description: "احصل على عرض سعر شخصي لاحتياجاتك من قطع غيار الشاحنات. ما عليك سوى تقديم بريدك الإلكتروني ووصف القطع التي تبحث عنها.",
+      form: {
+        title: "احصل على عرض السعر",
+        subtitle: "املأ النموذج أدناه وسنعود إليك بعرض سعر مفصل",
+        email: {
+          label: "عنوان البريد الإلكتروني",
+          placeholder: "أدخل عنوان بريدك الإلكتروني"
+        },
+        parts: {
+          label: "القطع المطلوبة",
+          placeholder: "صف القطع التي تحتاجها (العلامة التجارية، الطراز، أرقام القطع، الكميات، إلخ)"
+        },
+        submit: "طلب عرض سعر",
+        submitting: "جاري الإرسال..."
+      },
+      success: "تم إرسال طلب عرض السعر بنجاح! سنعود إليك قريباً."
+    }
   }
 };
 

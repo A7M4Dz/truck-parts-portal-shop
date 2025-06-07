@@ -40,10 +40,10 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-8 flex flex-col items-center justify-center h-64 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl"
+              className="card p-8 flex flex-col items-center justify-center h-80 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="w-full h-32 flex items-center justify-center mb-6">
+              <div className="w-full h-48 flex items-center justify-center mb-6">
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}

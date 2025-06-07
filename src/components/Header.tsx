@@ -19,13 +19,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-xl border-b-2 border-blue-600 sticky top-0 z-50">
       <div className="container-max">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo - Always on the left for both languages */}
           <div className="flex items-center order-1">
             <img 
               src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
               alt="ALREEM Logo" 
-              className="h-14 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 
