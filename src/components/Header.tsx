@@ -1,5 +1,5 @@
 
-import { Truck, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
@@ -12,20 +12,22 @@ const Header = () => {
     { name: t('nav.home'), href: "#" },
     { name: t('nav.about'), href: "#about" },
     { name: t('nav.products'), href: "#products" },
-    { name: t('nav.rfq'), href: "#rfq" },
     { name: t('nav.branches'), href: "#branches" },
-    { name: t('nav.careers'), href: "#careers" },
     { name: t('nav.contact'), href: "#contact" },
   ];
 
   return (
-    <header className="bg-white/98 backdrop-blur-md shadow-lg border-b border-gray-200/50 sticky top-0 z-50">
+    <header className="bg-white shadow-xl border-b-2 border-blue-600 sticky top-0 z-50">
       <div className="container-max">
         <div className="flex justify-between items-center h-20">
           {/* Logo - Always on the left for both languages */}
           <div className="flex items-center space-x-4 order-1">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-xl shadow-lg">
-              <Truck className="h-8 w-8 text-white" />
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
+                alt="ALREEM Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900 font-heading">{t('company.name')}</h1>
@@ -40,7 +42,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 relative group"
+                  className="text-gray-800 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -55,7 +57,7 @@ const Header = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                className="text-gray-800 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
               >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -71,7 +73,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 block px-4 py-3 text-base font-semibold transition-colors duration-200 rounded-lg hover:bg-blue-50"
+                  className="text-gray-800 hover:text-blue-600 block px-4 py-3 text-base font-semibold transition-colors duration-200 rounded-lg hover:bg-blue-50"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

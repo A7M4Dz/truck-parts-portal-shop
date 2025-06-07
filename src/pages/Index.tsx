@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import BrandsSection from "@/components/BrandsSection";
 import ProductsSection from "@/components/ProductsSection";
+import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -15,6 +16,7 @@ const Index = () => {
         <HeroSection />
         <BrandsSection />
         <ProductsSection />
+        <MapSection />
         <Footer />
         <WhatsAppButton />
       </div>

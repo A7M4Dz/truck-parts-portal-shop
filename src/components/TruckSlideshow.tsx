@@ -13,7 +13,7 @@ const TruckSlideshow = () => {
       image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       brand: "IVECO",
       model: "S-Way",
-      title: t('slideshow.iveco.title') || "Premium IVECO Trucks",
+      title: t('slideshow.iveco.title') || "Premium IVECO Parts",
       subtitle: t('slideshow.iveco.subtitle') || "Built for Performance"
     },
     {
@@ -23,14 +23,6 @@ const TruckSlideshow = () => {
       model: "TGX",
       title: t('slideshow.man.title') || "Reliable MAN Solutions",
       subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      brand: "MERCEDES",
-      model: "Actros",
-      title: t('slideshow.mercedes.title') || "Mercedes Actros Series",
-      subtitle: t('slideshow.mercedes.subtitle') || "The Future of Trucking"
     }
   ];
 

@@ -1,6 +1,6 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Truck, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -13,9 +13,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-4 mb-6">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-xl shadow-lg">
-                <Truck className="h-8 w-8 text-white" />
-              </div>
+              <img 
+                src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
+                alt="ALREEM Logo" 
+                className="h-12 w-auto brightness-0 invert"
+              />
               <div>
                 <h3 className="text-2xl font-bold text-blue-400 font-heading">{t('company.name')}</h3>
                 <p className="text-gray-400">{t('company.tagline')}</p>
@@ -45,15 +47,15 @@ const Footer = () => {
                 {t('nav.about')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              <li><a href="#products" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.products')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
-                {t('nav.careers')}
+              <li><a href="#location" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+                {t('nav.branches')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.contact')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a></li>
@@ -66,15 +68,15 @@ const Footer = () => {
             <div className="space-y-4 text-gray-300">
               <p className="flex items-center text-lg">
                 <Mail className="mr-3 text-blue-400" size={20} /> 
-                info@truckpartspro.com
+                info@alreem.sa
               </p>
               <p className="flex items-center text-lg">
                 <Phone className="mr-3 text-blue-400" size={20} /> 
-                +1 (555) 123-4567
+                +966 11 123 4567
               </p>
               <p className="flex items-center text-lg">
                 <MapPin className="mr-3 text-blue-400" size={20} /> 
-                123 Industrial Blvd, City, State 12345
+                {t('map.address')}
               </p>
             </div>
           </div>
