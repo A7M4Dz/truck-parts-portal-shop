@@ -13,7 +13,7 @@ const translations = {
     // Header
     'nav.home': 'Home',
     'nav.about': 'About Us',
-    'nav.products': 'Products',
+    'nav.products': 'Request Quote',
     'nav.branches': 'Our Locations',
     'nav.contact': 'Contact Us',
     'company.name': 'ALREEM',
@@ -25,15 +25,17 @@ const translations = {
     'hero.description': 'Your trusted partner for genuine truck parts from leading manufacturers. Professional quality, competitive prices, fast delivery across Saudi Arabia.',
     'hero.browse.catalog': 'Browse Our Catalog',
     'hero.get.quote': 'Get Instant Quote',
-    'hero.years.experience': 'Years Experience',
-    'hero.parts.available': 'Parts Available',
-    'hero.customer.support': 'Customer Support',
+    'hero.years.experience': '10+ Years Experience',
+    'hero.parts.available': '5000+ Parts Available',
+    'hero.customer.support': '24/7 Customer Support',
     
     // Slideshow
     'slideshow.iveco.title': 'Premium IVECO Parts',
     'slideshow.iveco.subtitle': 'Built for Performance',
     'slideshow.man.title': 'Reliable MAN Solutions',
     'slideshow.man.subtitle': 'Engineering Excellence',
+    'slideshow.zf.title': 'ZF Transmission Systems',
+    'slideshow.zf.subtitle': 'Advanced Technology',
     
     // Brands Section
     'brands.title': 'Authorized Dealer for',
@@ -42,25 +44,6 @@ const translations = {
     'brands.man.description': 'German truck and bus manufacturer known for engineering excellence',
     'brands.iveco.description': 'Italian commercial vehicle manufacturer with innovative solutions',
     'brands.zf.description': 'Leading transmission and mobility technology provider',
-    
-    // Products Section
-    'products.title': 'Premium',
-    'products.title.highlight': 'Truck Parts',
-    'products.description': 'Discover our comprehensive selection of commercial truck parts from leading manufacturers',
-    'products.category.all': 'All',
-    'products.category.engine': 'Engine',
-    'products.category.brake': 'Brake Parts',
-    'products.category.transmission': 'Transmission',
-    'products.heavy.duty.engine': 'Heavy Duty Engine Assembly',
-    'products.engine.description': 'Complete engine assembly for commercial trucks with warranty',
-    'products.air.brake': 'Air Brake System',
-    'products.brake.description': 'Professional grade air brake components - OEM quality',
-    'products.transmission.gearbox': 'ZF Transmission Gearbox',
-    'products.transmission.description': 'High-performance ZF transmission systems for heavy duty',
-    'products.drive.shaft': 'Drive Shaft Assembly',
-    'products.drive.description': 'Durable drive shaft for heavy-duty commercial applications',
-    'products.contact.pricing': 'Contact for pricing',
-    'products.view.details': 'View Details',
     
     // Map Section
     'map.title': 'Visit Our Store',
@@ -105,7 +88,7 @@ const translations = {
     // Header
     'nav.home': 'الرئيسية',
     'nav.about': 'من نحن',
-    'nav.products': 'المنتجات',
+    'nav.products': 'طلب عرض سعر',
     'nav.branches': 'مواقعنا',
     'nav.contact': 'اتصل بنا',
     'company.name': 'الريم',
@@ -117,15 +100,17 @@ const translations = {
     'hero.description': 'شريكك الموثوق لقطع غيار الشاحنات الأصلية من الشركات المصنعة الرائدة. جودة مهنية، أسعار تنافسية، توصيل سريع في جميع أنحاء المملكة العربية السعودية.',
     'hero.browse.catalog': 'تصفح الكتالوج',
     'hero.get.quote': 'احصل على عرض سعر',
-    'hero.years.experience': 'سنة خبرة',
-    'hero.parts.available': 'قطعة غيار متوفرة',
-    'hero.customer.support': 'دعم العملاء',
+    'hero.years.experience': '10+ سنة خبرة',
+    'hero.parts.available': '5000+ قطعة غيار متوفرة',
+    'hero.customer.support': 'دعم العملاء 24/7',
     
     // Slideshow
     'slideshow.iveco.title': 'قطع غيار إيفيكو المتميزة',
     'slideshow.iveco.subtitle': 'مصممة للأداء المتميز',
     'slideshow.man.title': 'حلول مان الموثوقة',
     'slideshow.man.subtitle': 'تميز في الهندسة',
+    'slideshow.zf.title': 'أنظمة نقل زد إف',
+    'slideshow.zf.subtitle': 'تقنية متقدمة',
     
     // Brands Section
     'brands.title': 'وكيل معتمد لـ',
@@ -134,25 +119,6 @@ const translations = {
     'brands.man.description': 'شركة ألمانية لصناعة الشاحنات والحافلات معروفة بتميزها الهندسي',
     'brands.iveco.description': 'شركة إيطالية لصناعة المركبات التجارية مع حلول مبتكرة',
     'brands.zf.description': 'مزود رائد لتقنيات ناقل الحركة والنقل',
-    
-    // Products Section
-    'products.title': 'قطع غيار',
-    'products.title.highlight': 'شاحنات عالية الجودة',
-    'products.description': 'اكتشف مجموعتنا الشاملة من قطع غيار الشاحنات التجارية من الشركات المصنعة الرائدة',
-    'products.category.all': 'الكل',
-    'products.category.engine': 'المحرك',
-    'products.category.brake': 'قطع الفرامل',
-    'products.category.transmission': 'ناقل الحركة',
-    'products.heavy.duty.engine': 'مجموعة محرك للخدمة الشاقة',
-    'products.engine.description': 'مجموعة محرك كاملة للشاحنات التجارية مع الضمان',
-    'products.air.brake': 'نظام الفرامل الهوائية',
-    'products.brake.description': 'مكونات فرامل هوائية احترافية - جودة أصلية',
-    'products.transmission.gearbox': 'صندوق تروس زد إف',
-    'products.transmission.description': 'أنظمة نقل زد إف عالية الأداء للخدمة الشاقة',
-    'products.drive.shaft': 'مجموعة عمود الإدارة',
-    'products.drive.description': 'عمود إدارة متين للتطبيقات التجارية الثقيلة',
-    'products.contact.pricing': 'اتصل للحصول على السعر',
-    'products.view.details': 'عرض التفاصيل',
     
     // Map Section
     'map.title': 'زوروا متجرنا',

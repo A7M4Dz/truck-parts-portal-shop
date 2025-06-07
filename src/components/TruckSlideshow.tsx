@@ -23,6 +23,14 @@ const TruckSlideshow = () => {
       model: "TGX",
       title: t('slideshow.man.title') || "Reliable MAN Solutions",
       subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      brand: "ZF",
+      model: "Transmission",
+      title: t('slideshow.zf.title') || "ZF Transmission Systems",
+      subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
     }
   ];
 

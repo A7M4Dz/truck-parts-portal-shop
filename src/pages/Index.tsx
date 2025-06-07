@@ -1,12 +1,12 @@
 
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
+import TruckSlideshow from "@/components/TruckSlideshow";
 import BrandsSection from "@/components/BrandsSection";
-import ProductsSection from "@/components/ProductsSection";
 import QuotationSection from "@/components/QuotationSection";
 import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -14,13 +14,13 @@ const Index = () => {
     <LanguageProvider>
       <div className="min-h-screen">
         <Header />
-        <HeroSection />
+        <TruckSlideshow />
         <BrandsSection />
-        <ProductsSection />
         <QuotationSection />
         <MapSection />
         <Footer />
         <WhatsAppButton />
+        <ScrollToTop />
       </div>
     </LanguageProvider>
   );

@@ -5,8 +5,19 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Footer = () => {
   const { t } = useLanguage();
 
+  const scrollToSection = (href: string) => {
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white section-padding relative overflow-hidden">
+    <footer id="contact" className="bg-gradient-to-b from-gray-900 to-gray-800 text-white section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] opacity-10 bg-cover bg-center"></div>
       <div className="container-max relative">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -16,7 +27,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
                 alt="ALREEM Logo" 
-                className="h-12 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-0 invert"
               />
               <div>
                 <h3 className="text-2xl font-bold text-blue-400 font-heading">{t('company.name')}</h3>
@@ -43,22 +54,22 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6 text-blue-400 font-heading">{t('footer.quick.links')}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              <li><button onClick={() => scrollToSection("#")} className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.about')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              </button></li>
+              <li><button onClick={() => scrollToSection("#quotation")} className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.products')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </a></li>
-              <li><a href="#location" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              </button></li>
+              <li><button onClick={() => scrollToSection("#location")} className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.branches')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
+              </button></li>
+              <li><button onClick={() => scrollToSection("#contact")} className="text-gray-300 hover:text-white transition-colors text-lg hover:text-blue-400 relative group">
                 {t('nav.contact')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </a></li>
+              </button></li>
             </ul>
           </div>
 
@@ -72,7 +83,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center text-lg">
                 <Phone className="mr-3 text-blue-400" size={20} /> 
-                +966 11 123 4567
+                +966 504 106 845
               </p>
               <p className="flex items-center text-lg">
                 <MapPin className="mr-3 text-blue-400" size={20} /> 
