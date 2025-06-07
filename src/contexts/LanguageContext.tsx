@@ -32,6 +32,14 @@ const translations = {
     'hero.parts.available': 'Parts Available',
     'hero.customer.support': 'Customer Support',
     
+    // Slideshow
+    'slideshow.iveco.title': 'Premium IVECO Parts',
+    'slideshow.iveco.subtitle': 'Built for Performance',
+    'slideshow.man.title': 'Reliable MAN Solutions',
+    'slideshow.man.subtitle': 'Engineering Excellence',
+    'slideshow.mercedes.title': 'Mercedes Excellence',
+    'slideshow.mercedes.subtitle': 'The Future of Trucking',
+    
     // Brands Section
     'brands.title': 'Trusted by',
     'brands.title.highlight': 'Industry Leaders',
@@ -84,6 +92,14 @@ const translations = {
     'hero.parts.available': 'قطعة غيار متوفرة',
     'hero.customer.support': 'دعم العملاء',
     
+    // Slideshow
+    'slideshow.iveco.title': 'قطع غيار إيفيكو المتميزة',
+    'slideshow.iveco.subtitle': 'مصممة للأداء',
+    'slideshow.man.title': 'حلول مان الموثوقة',
+    'slideshow.man.subtitle': 'تميز الهندسة',
+    'slideshow.mercedes.title': 'تميز مرسيدس',
+    'slideshow.mercedes.subtitle': 'مستقبل النقل',
+    
     // Brands Section
     'brands.title': 'موثوق من قبل',
     'brands.title.highlight': 'قادة الصناعة',
@@ -131,7 +147,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
-      <div className={language === 'ar' ? 'rtl' : 'ltr'} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <div 
+        className={`${language === 'ar' ? 'rtl font-arabic' : 'ltr'}`} 
+        dir={language === 'ar' ? 'rtl' : 'ltr'}
+        style={{ fontFamily: language === 'ar' ? 'Cairo, sans-serif' : 'Inter, sans-serif' }}
+      >
         {children}
       </div>
     </LanguageContext.Provider>
