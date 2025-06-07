@@ -23,7 +23,7 @@ const translations = {
     // Hero Section
     'hero.title': 'Premium Commercial',
     'hero.title.highlight': 'Truck Parts',
-    'hero.description': 'Your trusted partner for genuine IVECO, MAN, and ZF truck parts. Professional quality, competitive prices, fast delivery across Saudi Arabia.',
+    'hero.description': 'Your trusted partner for genuine truck parts from leading manufacturers. Professional quality, competitive prices, fast delivery across Saudi Arabia.',
     'hero.browse.catalog': 'Browse Our Catalog',
     'hero.get.quote': 'Get Instant Quote',
     'hero.years.experience': 'Years Experience',
@@ -39,7 +39,10 @@ const translations = {
     // Brands Section
     'brands.title': 'Authorized Dealer for',
     'brands.title.highlight': 'Leading Brands',
-    'brands.description': 'We are proud authorized dealers for IVECO, MAN, and ZF - the world\'s most trusted commercial vehicle manufacturers',
+    'brands.description': 'We are proud authorized dealers for MAN, IVECO, and ZF - the world\'s most trusted commercial vehicle manufacturers',
+    'brands.man.description': 'German truck and bus manufacturer known for engineering excellence',
+    'brands.iveco.description': 'Italian commercial vehicle manufacturer with innovative solutions',
+    'brands.zf.description': 'Leading transmission and mobility technology provider',
     
     // Products Section
     'products.title': 'Premium',
@@ -62,12 +65,17 @@ const translations = {
     
     // Map Section
     'map.title': 'Visit Our Store',
-    'map.description': 'Find us at our location for in-person consultations and immediate part availability',
-    'map.address': 'Riyadh, Saudi Arabia',
+    'map.description': 'Find us at our location in Dammam for in-person consultations and immediate part availability',
+    'map.address': 'Dammam, Saudi Arabia',
+    'map.visit.description': 'Visit our showroom and warehouse for immediate parts availability and expert consultation.',
     'map.directions': 'Get Directions',
     
+    // WhatsApp
+    'whatsapp.message': 'Hello! I\'m interested in your commercial truck parts.',
+    'whatsapp.aria.label': 'Contact us on WhatsApp',
+    
     // Footer
-    'footer.description': 'Leading supplier of commercial truck parts in Saudi Arabia with over 20 years of experience. We provide quality OEM parts from IVECO, MAN, and ZF to keep your fleet running strong.',
+    'footer.description': 'Leading supplier of commercial truck parts in Saudi Arabia with over 10 years of experience. We provide quality OEM parts from MAN, IVECO, and ZF to keep your fleet running strong.',
     'footer.quick.links': 'Quick Links',
     'footer.contact.info': 'Contact Info',
     'footer.copyright': '2024 ALREEM. All rights reserved. | Commercial Vehicle Solutions'
@@ -85,7 +93,7 @@ const translations = {
     // Hero Section
     'hero.title': 'قطع غيار تجارية',
     'hero.title.highlight': 'عالية الجودة',
-    'hero.description': 'شريكك الموثوق لقطع غيار الشاحنات الأصلية من إيفيكو ومان و زد إف. جودة مهنية، أسعار تنافسية، توصيل سريع في جميع أنحاء المملكة العربية السعودية.',
+    'hero.description': 'شريكك الموثوق لقطع غيار الشاحنات الأصلية من الشركات المصنعة الرائدة. جودة مهنية، أسعار تنافسية، توصيل سريع في جميع أنحاء المملكة العربية السعودية.',
     'hero.browse.catalog': 'تصفح الكتالوج',
     'hero.get.quote': 'احصل على عرض سعر',
     'hero.years.experience': 'سنة خبرة',
@@ -101,7 +109,10 @@ const translations = {
     // Brands Section
     'brands.title': 'وكيل معتمد لـ',
     'brands.title.highlight': 'العلامات الرائدة',
-    'brands.description': 'نفخر بكوننا وكلاء معتمدين لإيفيكو ومان و زد إف - أكثر مصنعي المركبات التجارية موثوقية في العالم',
+    'brands.description': 'نفخر بكوننا وكلاء معتمدين لمان وإيفيكو و زد إف - أكثر مصنعي المركبات التجارية موثوقية في العالم',
+    'brands.man.description': 'شركة ألمانية لصناعة الشاحنات والحافلات معروفة بتميزها الهندسي',
+    'brands.iveco.description': 'شركة إيطالية لصناعة المركبات التجارية مع حلول مبتكرة',
+    'brands.zf.description': 'مزود رائد لتقنيات ناقل الحركة والنقل',
     
     // Products Section
     'products.title': 'قطع غيار',
@@ -124,12 +135,17 @@ const translations = {
     
     // Map Section
     'map.title': 'زوروا متجرنا',
-    'map.description': 'اعثروا علينا في موقعنا للاستشارات الشخصية وتوفر القطع فوراً',
-    'map.address': 'الرياض، المملكة العربية السعودية',
+    'map.description': 'اعثروا علينا في موقعنا في الدمام للاستشارات الشخصية وتوفر القطع فوراً',
+    'map.address': 'الدمام، المملكة العربية السعودية',
+    'map.visit.description': 'زوروا صالة العرض والمستودع للحصول على القطع فوراً والاستشارة المتخصصة.',
     'map.directions': 'احصل على الاتجاهات',
     
+    // WhatsApp
+    'whatsapp.message': 'مرحباً! أنا مهتم بقطع غيار الشاحنات التجارية الخاصة بكم.',
+    'whatsapp.aria.label': 'تواصل معنا عبر الواتساب',
+    
     // Footer
-    'footer.description': 'مورد رائد لقطع غيار الشاحنات التجارية في المملكة العربية السعودية مع أكثر من 20 عامًا من الخبرة. نوفر قطع غيار أصلية عالية الجودة من إيفيكو ومان و زد إف للحفاظ على قوة أسطولك.',
+    'footer.description': 'مورد رائد لقطع غيار الشاحنات التجارية في المملكة العربية السعودية مع أكثر من 10 سنوات من الخبرة. نوفر قطع غيار أصلية عالية الجودة من مان وإيفيكو و زد إف للحفاظ على قوة أسطولك.',
     'footer.quick.links': 'روابط سريعة',
     'footer.contact.info': 'معلومات الاتصال',
     'footer.copyright': '2024 الريم. جميع الحقوق محفوظة. | حلول المركبات التجارية'

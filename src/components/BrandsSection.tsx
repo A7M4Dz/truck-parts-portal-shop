@@ -6,19 +6,19 @@ const BrandsSection = () => {
   
   const brands = [
     { 
-      name: "IVECO", 
-      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&crop=center",
-      description: "Italian commercial vehicle manufacturer"
+      name: "MAN", 
+      logo: "/lovable-uploads/7b4506ea-9087-4fc3-a247-0d9dacaa77e9.png",
+      description: t('brands.man.description')
     },
     { 
-      name: "MAN", 
-      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&crop=center",
-      description: "German truck and bus manufacturer"
+      name: "IVECO", 
+      logo: "/lovable-uploads/27fa8e0b-46b8-4094-a90f-f69815ca2ee4.png",
+      description: t('brands.iveco.description')
     },
     { 
       name: "ZF", 
-      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&crop=center",
-      description: "Leading transmission technology"
+      logo: "/lovable-uploads/cc41819d-57bc-4b05-b3a4-cbd0fb7940bd.png",
+      description: t('brands.zf.description')
     }
   ];
 
@@ -36,20 +36,24 @@ const BrandsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 animate-slideIn max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 animate-slideIn max-w-6xl mx-auto">
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-12 flex flex-col items-center justify-center h-48 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl"
+              className="card p-8 flex flex-col items-center justify-center h-64 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="w-full h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-white font-bold text-lg">{brand.name}</span>
+              <div className="w-full h-32 flex items-center justify-center mb-6">
+                <img 
+                  src={brand.logo} 
+                  alt={`${brand.name} Logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
-              <span className="text-lg font-bold text-gray-800 text-center group-hover:text-blue-600 transition-colors duration-300 mb-2">
+              <span className="text-xl font-bold text-gray-800 text-center group-hover:text-blue-600 transition-colors duration-300 mb-3">
                 {brand.name}
               </span>
-              <p className="text-sm text-gray-600 text-center">
+              <p className="text-base text-gray-600 text-center leading-relaxed">
                 {brand.description}
               </p>
             </div>

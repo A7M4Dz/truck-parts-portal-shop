@@ -21,18 +21,12 @@ const Header = () => {
       <div className="container-max">
         <div className="flex justify-between items-center h-20">
           {/* Logo - Always on the left for both languages */}
-          <div className="flex items-center space-x-4 order-1">
-            <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
-                alt="ALREEM Logo" 
-                className="h-12 w-auto"
-              />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 font-heading">{t('company.name')}</h1>
-              <p className="text-sm text-gray-600 font-medium">{t('company.tagline')}</p>
-            </div>
+          <div className="flex items-center order-1">
+            <img 
+              src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
+              alt="ALREEM Logo" 
+              className="h-14 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation - Always in center */}
