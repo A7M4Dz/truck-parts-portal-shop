@@ -8,17 +8,17 @@ const BrandsSection = () => {
     { 
       name: "MAN", 
       logo: "/lovable-uploads/7b4506ea-9087-4fc3-a247-0d9dacaa77e9.png",
-      description: t('brands.man.description')
+      description: t('brands.man.description') || "German engineering excellence in commercial vehicles. Known for reliability, fuel efficiency, and innovative technology solutions that keep your fleet moving."
     },
     { 
       name: "IVECO", 
       logo: "/lovable-uploads/27fa8e0b-46b8-4094-a90f-f69815ca2ee4.png",
-      description: t('brands.iveco.description')
+      description: t('brands.iveco.description') || "Italian innovation meets practical design. Offering comprehensive solutions for transport and construction with focus on sustainability and performance."
     },
     { 
       name: "ZF", 
       logo: "/lovable-uploads/cc41819d-57bc-4b05-b3a4-cbd0fb7940bd.png",
-      description: t('brands.zf.description')
+      description: t('brands.zf.description') || "Global leader in driveline and chassis technology. Advanced transmission systems and components that deliver superior performance and efficiency."
     }
   ];
 
@@ -40,15 +40,20 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-6 md:p-8 flex flex-col items-center justify-center h-64 md:h-80 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl"
+              className="card p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[300px] md:min-h-[350px] flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="flex-1 flex items-center justify-center mb-4 md:mb-6">
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="max-w-full max-h-32 md:max-h-40 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
+              </div>
+              <div className="text-center">
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  {brand.description}
+                </p>
               </div>
             </div>
           ))}

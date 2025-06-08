@@ -15,10 +15,10 @@ const WhatsAppButton = () => {
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-50"
+      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-5 md:p-6 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-50 min-h-[56px] min-w-[56px] md:min-h-[64px] md:min-w-[64px]"
       aria-label={t('whatsapp.aria.label')}
     >
-      <MessageCircle size={24} />
+      <MessageCircle size={28} className="md:w-8 md:h-8" />
     </button>
   );
 };

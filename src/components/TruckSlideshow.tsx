@@ -26,17 +26,17 @@ const TruckSlideshow = () => {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      brand: "MAN",
-      model: "TGX",
-      title: t('slideshow.man.title') || "Reliable MAN Solutions",
-      subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
+      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      brand: "IVECO",
+      model: "Eurocargo",
+      title: t('slideshow.iveco.title') || "Premium IVECO Parts",
+      subtitle: t('slideshow.iveco.subtitle') || "Built for Performance"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1566473179817-95b9e8be8e8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       brand: "MAN",
-      model: "TGS",
+      model: "TGX",
       title: t('slideshow.man.title') || "Reliable MAN Solutions",
       subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
     },
@@ -55,6 +55,14 @@ const TruckSlideshow = () => {
       model: "Axles",
       title: t('slideshow.zf.title') || "ZF Transmission Systems",
       subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
+    },
+    {
+      id: 7,
+      image: "https://images.unsplash.com/photo-1594736797933-d0fce9e3f273?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      brand: "ZF",
+      model: "Systems",
+      title: t('slideshow.zf.title') || "ZF Transmission Systems",
+      subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
     }
   ];
 
@@ -71,6 +79,13 @@ const TruckSlideshow = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const scrollToLocation = () => {
+    const element = document.querySelector("#location");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const scrollToQuotation = () => {
@@ -99,23 +114,26 @@ const TruckSlideshow = () => {
           {/* Content */}
           <div className="relative h-full flex items-center">
             <div className="container-max">
-              <div className="max-w-2xl text-white animate-fadeInUp">
-                <div className="text-blue-400 text-xl font-semibold mb-2 tracking-wide">
+              <div className="max-w-2xl text-white animate-fadeInUp px-4">
+                <div className="text-blue-400 text-lg md:text-xl font-semibold mb-2 tracking-wide">
                   {slide.brand}
                 </div>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-lg md:text-2xl mb-8 text-gray-200 font-light">
+                <p className="text-base md:text-xl mb-6 md:mb-8 text-gray-200 font-light">
                   {slide.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="btn-primary text-sm md:text-base px-6 py-3 md:px-8 md:py-4">
-                    {t('hero.browse.catalog')}
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                  <button 
+                    onClick={scrollToLocation}
+                    className="btn-primary text-sm md:text-base px-4 py-2 md:px-6 md:py-3 min-h-[44px]"
+                  >
+                    {t('hero.our.location')}
                   </button>
                   <button 
                     onClick={scrollToQuotation}
-                    className="btn-secondary text-sm md:text-base px-6 py-3 md:px-8 md:py-4"
+                    className="btn-secondary text-sm md:text-base px-4 py-2 md:px-6 md:py-3 min-h-[44px]"
                   >
                     {t('hero.get.quote')}
                   </button>
@@ -126,35 +144,27 @@ const TruckSlideshow = () => {
         </div>
       ))}
 
-      {/* Get Instant Quote Button - Top Left */}
-      <button
-        onClick={scrollToQuotation}
-        className="absolute top-6 left-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 z-10 shadow-lg"
-      >
-        {t('hero.get.quote')}
-      </button>
-
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 min-h-[44px] min-w-[44px]"
       >
-        <ChevronLeft size={20} className="md:w-6 md:h-6" />
+        <ChevronLeft size={18} className="md:w-5 md:h-5" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 min-h-[44px] min-w-[44px]"
       >
-        <ChevronRight size={20} className="md:w-6 md:h-6" />
+        <ChevronRight size={18} className="md:w-5 md:h-5" />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 md:space-x-3">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center ${
               index === currentSlide 
                 ? 'bg-blue-400 scale-125' 
                 : 'bg-white/50 hover:bg-white/75'
@@ -164,8 +174,8 @@ const TruckSlideshow = () => {
       </div>
 
       {/* Brand Badge */}
-      <div className="absolute top-6 md:top-8 right-6 md:right-8 bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 text-white">
-        <div className="text-xl md:text-3xl font-bold">{slides[currentSlide].brand}</div>
+      <div className="absolute top-4 md:top-6 right-4 md:right-6 bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-3 text-white">
+        <div className="text-lg md:text-2xl font-bold">{slides[currentSlide].brand}</div>
         <div className="text-xs md:text-sm text-gray-300">{slides[currentSlide].model}</div>
       </div>
     </div>

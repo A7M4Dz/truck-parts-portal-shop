@@ -36,13 +36,13 @@ const Footer = () => {
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] opacity-10 bg-cover bg-center"></div>
       <div className="container-max relative">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 px-4">
-          {/* Company Info - Always on the left for both languages */}
+          {/* Company Info */}
           <div className="col-span-1 md:col-span-2 order-1">
             <div className="flex items-center space-x-4 mb-6">
               <img 
                 src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
                 alt="ALREEM Logo" 
-                className="h-16 md:h-20 w-auto brightness-0 invert"
+                className="h-16 md:h-20 w-auto"
               />
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-blue-400 font-heading">{t('company.name')}</h3>
@@ -55,29 +55,29 @@ const Footer = () => {
             <div className="flex space-x-4">
               <button 
                 onClick={handleEmailClick}
-                className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
+                className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
                 aria-label="Email us"
               >
-                <Mail size={18} className="md:w-5 md:h-5" />
+                <Mail size={20} className="md:w-6 md:h-6" />
               </button>
               <button 
                 onClick={handlePhoneClick}
-                className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
+                className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
                 aria-label="Call us on WhatsApp"
               >
-                <Phone size={18} className="md:w-5 md:h-5" />
+                <Phone size={20} className="md:w-6 md:h-6" />
               </button>
               <button 
                 onClick={handleMapClick}
-                className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
+                className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer min-h-[44px] min-w-[44px]"
                 aria-label="Find us on map"
               >
-                <MapPin size={18} className="md:w-5 md:h-5" />
+                <MapPin size={20} className="md:w-6 md:h-6" />
               </button>
             </div>
           </div>
 
-          {/* Quick Links - Always in center-left for both languages */}
+          {/* Quick Links */}
           <div className="order-2">
             <h4 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading">{t('footer.quick.links')}</h4>
             <ul className="space-y-3 md:space-y-4">
@@ -100,7 +100,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info - Always on the right for both languages */}
+          {/* Contact Info */}
           <div className="order-3">
             <h4 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading">{t('footer.contact.info')}</h4>
             <div className="space-y-3 md:space-y-4 text-gray-300">
