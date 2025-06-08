@@ -10,7 +10,7 @@ const Header = () => {
 
   const navigationItems = [
     { name: t('nav.home'), href: "#" },
-    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.about'), href: "#brands" },
     { name: t('nav.products'), href: "#quotation" },
     { name: t('nav.branches'), href: "#location" },
     { name: t('nav.contact'), href: "#contact" },
@@ -31,13 +31,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-xl border-b-2 border-blue-600 sticky top-0 z-50">
       <div className="container-max">
-        <div className="flex justify-between items-center h-28">
+        <div className="flex justify-between items-center h-32 md:h-36">
           {/* Logo - Always on the left for both languages */}
           <div className="flex items-center order-1">
             <img 
               src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
               alt="ALREEM Logo" 
-              className="h-24 w-auto"
+              className="h-28 md:h-32 w-auto"
             />
           </div>
 
@@ -48,7 +48,7 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-800 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 relative group"
+                  className="text-gray-800 hover:text-blue-600 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-blue-50 relative group min-h-[44px] flex items-center"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -63,7 +63,7 @@ const Header = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-800 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                className="text-gray-800 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -79,7 +79,7 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-800 hover:text-blue-600 block px-4 py-3 text-base font-semibold transition-colors duration-200 rounded-lg hover:bg-blue-50 w-full text-left"
+                  className="text-gray-800 hover:text-blue-600 block px-4 py-3 text-base font-semibold transition-colors duration-200 rounded-lg hover:bg-blue-50 w-full text-left min-h-[44px]"
                 >
                   {item.name}
                 </button>
