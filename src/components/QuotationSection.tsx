@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, FileText } from "lucide-react";
 
 const QuotationSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [email, setEmail] = useState("");
   const [partsNeeded, setPartsNeeded] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,7 +29,7 @@ const QuotationSection = () => {
     setIsSubmitting(false);
     
     // Show success message (you could use a toast here)
-    alert(t('quotation.success'));
+    alert(language === 'ar' ? 'تم إرسال طلب عرض السعر بنجاح! سنعود إليك قريباً.' : 'Your quotation request has been submitted successfully! We\'ll get back to you soon.');
   };
 
   return (
@@ -37,11 +37,14 @@ const QuotationSection = () => {
       <div className="container-max">
         <div className="text-center mb-16 animate-fadeInUp">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-heading">
-            {t('quotation.title')} <span className="text-gradient">{t('quotation.title.highlight')}</span>
+            {language === 'ar' ? 'طلب' : 'Request a'} <span className="text-gradient">{language === 'ar' ? 'عرض سعر' : 'Quotation'}</span>
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            {t('quotation.description')}
+            {language === 'ar' 
+              ? 'احصل على عرض سعر شخصي لاحتياجاتك من قطع غيار الشاحنات. ما عليك سوى تقديم بريدك الإلكتروني ووصف القطع التي تبحث عنها.'
+              : 'Get a personalized quote for your truck parts needs. Simply provide your email and describe the parts you\'re looking for.'
+            }
           </p>
         </div>
 
@@ -49,10 +52,13 @@ const QuotationSection = () => {
           <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center pb-8">
               <CardTitle className="text-3xl font-bold text-gray-900 mb-4">
-                {t('quotation.form.title')}
+                {language === 'ar' ? 'احصل على عرض السعر' : 'Get Your Quote'}
               </CardTitle>
               <p className="text-gray-600 text-lg">
-                {t('quotation.form.subtitle')}
+                {language === 'ar' 
+                  ? 'املأ النموذج أدناه وسنعود إليك بعرض سعر مفصل'
+                  : 'Fill out the form below and we\'ll get back to you with a detailed quotation'
+                }
               </p>
             </CardHeader>
             <CardContent>
@@ -60,14 +66,14 @@ const QuotationSection = () => {
                 <div className="space-y-2">
                   <label htmlFor="email" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
                     <Mail className="w-4 h-4 mr-2" />
-                    {t('quotation.form.email.label')}
+                    {language === 'ar' ? 'عنوان البريد الإلكتروني' : 'Email Address'}
                   </label>
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder={t('quotation.form.email.placeholder')}
+                    placeholder={language === 'ar' ? 'أدخل عنوان بريدك الإلكتروني' : 'Enter your email address'}
                     required
                     className="h-12 text-base"
                   />
@@ -76,13 +82,16 @@ const QuotationSection = () => {
                 <div className="space-y-2">
                   <label htmlFor="parts" className="flex items-center text-sm font-semibold text-gray-700 mb-2">
                     <FileText className="w-4 h-4 mr-2" />
-                    {t('quotation.form.parts.label')}
+                    {language === 'ar' ? 'القطع المطلوبة' : 'Parts Needed'}
                   </label>
                   <Textarea
                     id="parts"
                     value={partsNeeded}
                     onChange={(e) => setPartsNeeded(e.target.value)}
-                    placeholder={t('quotation.form.parts.placeholder')}
+                    placeholder={language === 'ar' 
+                      ? 'صف القطع التي تحتاجها (العلامة التجارية، الطراز، أرقام القطع، الكميات، إلخ)'
+                      : 'Describe the parts you need (brand, model, part numbers, quantities, etc.)'
+                    }
                     required
                     rows={6}
                     className="text-base resize-none"
@@ -94,7 +103,10 @@ const QuotationSection = () => {
                   disabled={isSubmitting}
                   className="w-full h-12 text-lg font-semibold bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
                 >
-                  {isSubmitting ? t('quotation.form.submitting') : t('quotation.form.submit')}
+                  {isSubmitting 
+                    ? (language === 'ar' ? 'جاري الإرسال...' : 'Submitting...') 
+                    : (language === 'ar' ? 'طلب عرض سعر' : 'Submit')
+                  }
                 </Button>
               </form>
             </CardContent>

@@ -16,6 +16,21 @@ const Footer = () => {
     }
   };
 
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:info@alreem.sa';
+  };
+
+  const handlePhoneClick = () => {
+    const phoneNumber = "+966504106845";
+    const message = t('whatsapp.message');
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleMapClick = () => {
+    window.open('https://www.google.com/maps?q=26.461526,50.013970', '_blank');
+  };
+
   return (
     <footer id="contact" className="bg-gradient-to-b from-gray-900 to-gray-800 text-white section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] opacity-10 bg-cover bg-center"></div>
@@ -38,15 +53,24 @@ const Footer = () => {
               {t('footer.description')}
             </p>
             <div className="flex space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <button 
+                onClick={handleEmailClick}
+                className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer"
+              >
                 <Mail size={20} />
-              </div>
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              </button>
+              <button 
+                onClick={handlePhoneClick}
+                className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer"
+              >
                 <Phone size={20} />
-              </div>
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              </button>
+              <button 
+                onClick={handleMapClick}
+                className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer"
+              >
                 <MapPin size={20} />
-              </div>
+              </button>
             </div>
           </div>
 
