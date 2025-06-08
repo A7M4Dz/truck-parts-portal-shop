@@ -2,23 +2,29 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const BrandsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const brands = [
     { 
       name: "MAN", 
       logo: "/lovable-uploads/7b4506ea-9087-4fc3-a247-0d9dacaa77e9.png",
-      description: t('brands.man.description') || "German engineering excellence in commercial vehicles. Known for reliability, fuel efficiency, and innovative technology solutions that keep your fleet moving."
+      description: language === 'ar' 
+        ? "مورد رائد لناقل الحركة والتنقل"
+        : "Global leader in driveline and chassis technology. Advanced transmission systems and components that deliver superior performance and efficiency."
     },
     { 
       name: "IVECO", 
       logo: "/lovable-uploads/27fa8e0b-46b8-4094-a90f-f69815ca2ee4.png",
-      description: t('brands.iveco.description') || "Italian innovation meets practical design. Offering comprehensive solutions for transport and construction with focus on sustainability and performance."
+      description: language === 'ar'
+        ? "شركة إيطالية لصناعة المركبات التجارية مع حلول مبتكرة"
+        : "Italian innovation meets practical design. Offering comprehensive solutions for transport and construction with focus on sustainability and performance."
     },
     { 
       name: "ZF", 
       logo: "/lovable-uploads/cc41819d-57bc-4b05-b3a4-cbd0fb7940bd.png",
-      description: t('brands.zf.description') || "Global leader in driveline and chassis technology. Advanced transmission systems and components that deliver superior performance and efficiency."
+      description: language === 'ar'
+        ? "مورد رائد لتقنيات ناقل الحركة والتنقل"
+        : "Global leader in driveline and chassis technology. Advanced transmission systems and components that deliver superior performance and efficiency."
     }
   ];
 
@@ -47,11 +53,12 @@ const BrandsSection = () => {
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="max-w-full max-h-32 md:max-h-40 object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="max-w-full max-h-32 md:max-h-40 object-contain group-hover:scale-110 transition-transform duration-300 filter brightness-100"
+                  style={{ filter: 'none' }}
                 />
               </div>
               <div className="text-center">
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {brand.description}
                 </p>
               </div>
