@@ -33,16 +33,16 @@ const BrandsSection = () => {
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] opacity-5 bg-cover bg-center"></div>
       <div className="container-max relative">
         <div className="text-center mb-12 md:mb-16 animate-fadeInUp px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 font-heading">
+          <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 font-heading ${language === 'ar' ? 'leading-relaxed' : ''}`}>
             {t('brands.title')} <span className="text-gradient">{t('brands.title.highlight')}</span>
           </h2>
           <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 md:mb-8"></div>
-          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className={`text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {t('brands.description')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 animate-slideIn max-w-6xl mx-auto px-4">
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 animate-slideIn max-w-6xl mx-auto px-4 ${language === 'ar' ? 'rtl' : 'ltr'}`}>
           {brands.map((brand, index) => (
             <div
               key={index}
@@ -57,8 +57,8 @@ const BrandsSection = () => {
                   style={{ filter: 'none' }}
                 />
               </div>
-              <div className="text-center">
-                <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              <div className={`text-center ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'font-arabic text-right' : ''}`}>
                   {brand.description}
                 </p>
               </div>

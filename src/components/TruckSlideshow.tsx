@@ -10,7 +10,7 @@ const TruckSlideshow = () => {
   const slides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "/lovable-uploads/360531dc-e9c5-4d78-9d06-90c9a2f09e3c.png",
       brand: "IVECO",
       model: "S-Way",
       title: t('slideshow.iveco.title') || "Premium IVECO Parts",
@@ -18,30 +18,22 @@ const TruckSlideshow = () => {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      brand: "IVECO",
-      model: "Daily",
-      title: t('slideshow.iveco.title') || "Premium IVECO Parts",
-      subtitle: t('slideshow.iveco.subtitle') || "Built for Performance"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      brand: "IVECO",
-      model: "Eurocargo",
-      title: t('slideshow.iveco.title') || "Premium IVECO Parts",
-      subtitle: t('slideshow.iveco.subtitle') || "Built for Performance"
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "/lovable-uploads/3fef7e04-c55f-4baa-bed1-fe5f16e74bd6.png",
       brand: "MAN",
       model: "TGX",
       title: t('slideshow.man.title') || "Reliable MAN Solutions",
       subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
     },
     {
-      id: 5,
+      id: 3,
+      image: "/lovable-uploads/93a569ee-351d-4651-b7a5-dc32d1012236.png",
+      brand: "MAN",
+      model: "TGX",
+      title: t('slideshow.man.title') || "Reliable MAN Solutions",
+      subtitle: t('slideshow.man.subtitle') || "Engineering Excellence"
+    },
+    {
+      id: 4,
       image: "https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       brand: "ZF",
       model: "Transmission",
@@ -49,18 +41,10 @@ const TruckSlideshow = () => {
       subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
     },
     {
-      id: 6,
+      id: 5,
       image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       brand: "ZF",
       model: "Axles",
-      title: t('slideshow.zf.title') || "ZF Transmission Systems",
-      subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
-    },
-    {
-      id: 7,
-      image: "https://images.unsplash.com/photo-1594736797933-d0fce9e3f273?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      brand: "ZF",
-      model: "Systems",
       title: t('slideshow.zf.title') || "ZF Transmission Systems",
       subtitle: t('slideshow.zf.subtitle') || "Advanced Technology"
     }
