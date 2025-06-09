@@ -37,7 +37,7 @@ const BrandsSection = () => {
             {t('brands.title')} <span className="text-gradient">{t('brands.title.highlight')}</span>
           </h2>
           <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-4 md:mb-6 lg:mb-8"></div>
-          <p className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${language === 'ar' ? 'text-right font-arabic' : 'text-left'}`}>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${language === 'ar' ? 'text-center font-arabic' : 'text-center'}`}>
             {t('brands.description')}
           </p>
         </div>
@@ -46,30 +46,21 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-4 sm:p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[280px] sm:min-h-[300px] md:min-h-[350px] flex flex-col"
+              className="card p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[320px] md:min-h-[360px] flex flex-col justify-center items-center"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="flex-1 flex flex-col items-center justify-center mb-4 md:mb-6 h-24 sm:h-28 md:h-32 lg:h-40">
-                <img 
-                  src={brand.logo} 
-                  alt={`${brand.name} Logo`}
-                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                  style={{ 
-                    filter: 'none',
-                    objectFit: 'contain',
-                    width: 'auto',
-                    height: 'auto',
-                    maxWidth: '100%',
-                    maxHeight: '100%'
-                  }}
-                  loading="lazy"
-                />
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mt-2 md:mt-4 font-heading text-center">
-                  {brand.name}
-                </h3>
+              <div className="flex-1 flex flex-col items-center justify-center mb-6 w-full">
+                <div className="h-32 md:h-40 lg:h-48 w-full flex items-center justify-center mb-4">
+                  <img 
+                    src={brand.logo} 
+                    alt={`${brand.name} Logo`}
+                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <div className={`text-center flex-shrink-0 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'font-arabic text-right' : ''}`}>
+              <div className="text-center w-full">
+                <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'font-arabic text-center' : 'text-center'}`}>
                   {brand.description}
                 </p>
               </div>
