@@ -133,6 +133,9 @@
     font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--color-dark);
+    /* Improve mobile scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -140,11 +143,26 @@
     font-weight: 700;
     line-height: 1.2;
     color: var(--color-dark);
+    /* Better mobile text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Arabic font support */
   .font-arabic {
     font-family: var(--font-arabic);
+  }
+
+  /* Mobile-first improvements */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    input, textarea, select {
+      font-size: 16px; /* Prevent zoom on iOS */
+      border-radius: 0; /* Remove iOS rounded corners */
+    }
   }
 }
 
@@ -154,11 +172,17 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-0;
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-0 touch-manipulation;
+    /* Better mobile touch targets */
+    min-height: 44px;
+    min-width: 44px;
   }
   
   .btn-secondary {
-    @apply border-2 border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 bg-white;
+    @apply border-2 border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 bg-white touch-manipulation;
+    /* Better mobile touch targets */
+    min-height: 44px;
+    min-width: 44px;
   }
   
   .card {
@@ -166,11 +190,27 @@
   }
   
   .section-padding {
-    @apply py-24;
+    @apply py-16 sm:py-20 md:py-24;
   }
   
   .container-max {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Mobile-optimized navigation */
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-inset-bottom;
+  }
+
+  /* Better mobile forms */
+  .form-input {
+    @apply w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors;
+    min-height: 44px; /* iOS accessibility */
+  }
+
+  /* Mobile-friendly cards */
+  .mobile-card {
+    @apply p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100 bg-white;
   }
 }
 
@@ -197,17 +237,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* RTL Support */
+/* RTL Support - Fixed to not affect vertical layouts */
 [dir="rtl"] {
   text-align: right;
 }
 
-[dir="rtl"] .flex {
+/* Only apply RTL flexbox to specific horizontal layouts */
+[dir="rtl"] .rtl-horizontal {
   flex-direction: row-reverse;
 }
 
-[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+[dir="rtl"] .rtl-horizontal.space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
+}
+
+/* Ensure brand cards maintain vertical layout in RTL */
+[dir="rtl"] .brand-card-container {
+  direction: ltr;
+}
+
+[dir="rtl"] .brand-card-text {
+  direction: rtl;
+  text-align: center;
 }
 
 /* Animation utilities */
@@ -251,4 +302,64 @@ html {
 .professional-spacing {
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-md);
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .reduce-motion {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Better touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve text readability on mobile */
+  p, li {
+    line-height: 1.6;
+  }
+  
+  /* Better spacing for mobile */
+  .mobile-spacing {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for better accessibility */
+button:focus-visible, 
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--color-dark);
+  }
+  
+  .text-gradient {
+    background: var(--color-dark);
+    color: var(--color-dark);
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
 }
