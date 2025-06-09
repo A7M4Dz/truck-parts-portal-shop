@@ -60,7 +60,6 @@ const translations = {
     'footer.description': 'Leading supplier of commercial truck parts in Saudi Arabia with over 10 years of experience. We provide quality OEM parts from MAN, IVECO, and ZF to keep your fleet running strong.',
     'footer.quick.links': 'Quick Links',
     'footer.contact.info': 'Contact Info',
-    'footer.copyright': '2025 ALREEM. All rights reserved. | Commercial Vehicle Solutions',
     
     // Quotation
     'quotation.title': 'Request a',
@@ -127,7 +126,6 @@ const translations = {
     'footer.description': 'مورد رائد لقطع غيار الشاحنات التجارية في المملكة العربية السعودية مع أكثر من 10 سنوات من الخبرة. نوفر قطع غيار أصلية عالية الجودة من مان وإيفيكو و زد إف للحفاظ على قوة أسطولك.',
     'footer.quick.links': 'روابط سريعة',
     'footer.contact.info': 'معلومات الاتصال',
-    'footer.copyright': '2025 الريم. جميع الحقوق محفوظة. | حلول المركبات التجارية',
     
     // Quotation
     'quotation.title': 'طلب',

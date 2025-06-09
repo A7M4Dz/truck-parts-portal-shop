@@ -32,24 +32,24 @@ const BrandsSection = () => {
     <section id="brands" className="section-padding bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] opacity-5 bg-cover bg-center"></div>
       <div className="container-max relative">
-        <div className="text-center mb-12 md:mb-16 animate-fadeInUp px-4">
-          <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 font-heading ${language === 'ar' ? 'leading-relaxed font-arabic' : ''}`}>
+        <div className="text-center mb-8 md:mb-12 lg:mb-16 animate-fadeInUp px-4">
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6 font-heading ${language === 'ar' ? 'leading-relaxed font-arabic' : ''}`}>
             {t('brands.title')} <span className="text-gradient">{t('brands.title.highlight')}</span>
           </h2>
-          <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 md:mb-8"></div>
-          <p className={`text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${language === 'ar' ? 'text-right font-arabic' : 'text-left'}`}>
+          <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-4 md:mb-6 lg:mb-8"></div>
+          <p className={`text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed ${language === 'ar' ? 'text-right font-arabic' : 'text-left'}`}>
             {t('brands.description')}
           </p>
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 animate-slideIn max-w-6xl mx-auto px-4 ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 animate-slideIn max-w-6xl mx-auto px-4">
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[300px] md:min-h-[350px] flex flex-col"
+              className="card p-4 sm:p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[280px] sm:min-h-[300px] md:min-h-[350px] flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="flex-1 flex items-center justify-center mb-4 md:mb-6 h-32 md:h-40">
+              <div className="flex-1 flex flex-col items-center justify-center mb-4 md:mb-6 h-24 sm:h-28 md:h-32 lg:h-40">
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
@@ -64,6 +64,9 @@ const BrandsSection = () => {
                   }}
                   loading="lazy"
                 />
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mt-2 md:mt-4 font-heading text-center">
+                  {brand.name}
+                </h3>
               </div>
               <div className={`text-center flex-shrink-0 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                 <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'font-arabic text-right' : ''}`}>
