@@ -42,24 +42,24 @@ const BrandsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 animate-slideIn max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 animate-slideIn max-w-7xl mx-auto px-4">
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="card p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl min-h-[320px] md:min-h-[360px] flex flex-col justify-center items-center"
+              className="card p-6 md:p-8 group cursor-pointer hover:scale-105 transition-all duration-300 bg-white shadow-xl rounded-xl border border-gray-100 min-h-[380px] md:min-h-[420px] flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex-1 flex flex-col items-center justify-center mb-6 w-full">
-                <div className="h-32 md:h-40 lg:h-48 w-full flex items-center justify-center mb-4">
+                <div className="h-32 md:h-40 lg:h-48 w-full flex items-center justify-center mb-6 bg-gray-50 rounded-lg p-4">
                   <img 
                     src={brand.logo} 
                     alt={`${brand.name} Logo`}
-                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300 filter brightness-100 contrast-100"
                     loading="lazy"
                   />
                 </div>
               </div>
-              <div className="text-center w-full">
+              <div className="text-center w-full border-t border-gray-100 pt-4">
                 <p className={`text-gray-600 text-sm md:text-base leading-relaxed ${language === 'ar' ? 'font-arabic text-center' : 'text-center'}`}>
                   {brand.description}
                 </p>
