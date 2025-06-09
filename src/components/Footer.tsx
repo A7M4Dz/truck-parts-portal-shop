@@ -38,18 +38,19 @@ const Footer = () => {
         <div className={`grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 px-4 ${language === 'ar' ? 'md:grid-flow-col-dense' : ''}`}>
           {/* Company Info */}
           <div className={`col-span-1 md:col-span-2 ${language === 'ar' ? 'order-1 md:order-4 text-right' : 'order-1'}`}>
-            <div className={`flex items-center space-x-4 mb-6 ${language === 'ar' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+            <div className={`flex items-center mb-6 ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
               <img 
                 src="/lovable-uploads/f0209fbc-f8ca-4223-aeb5-786f4422f8a7.png" 
                 alt="ALREEM Logo" 
                 className="h-16 md:h-20 w-auto"
               />
-              <div className={language === 'ar' ? 'text-right' : ''}>
-                <h3 className="text-xl md:text-2xl font-bold text-blue-400 font-heading">{t('company.name')}</h3>
-                <p className="text-sm md:text-base text-gray-400">{t('company.tagline')}</p>
+              <div className={`${language === 'ar' ? 'text-right mr-4' : 'text-left ml-4'}`}>
+                <h3 className={`text-xl md:text-2xl font-bold text-blue-400 font-heading ${language === 'ar' ? 'font-arabic' : ''}`}>
+                  {t('company.name')}
+                </h3>
               </div>
             </div>
-            <p className={`text-gray-300 mb-6 md:mb-8 max-w-md leading-relaxed text-base md:text-lg ${language === 'ar' ? 'text-right' : ''}`}>
+            <p className={`text-gray-300 mb-6 md:mb-8 max-w-md leading-relaxed text-base md:text-lg ${language === 'ar' ? 'text-right font-arabic' : ''}`}>
               {t('footer.description')}
             </p>
             <div className={`flex space-x-4 ${language === 'ar' ? 'flex-row-reverse space-x-reverse justify-end' : ''}`}>
@@ -79,21 +80,23 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className={`${language === 'ar' ? 'order-2 md:order-2 text-right' : 'order-2'}`}>
-            <h4 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading">{t('footer.quick.links')}</h4>
+            <h4 className={`text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading ${language === 'ar' ? 'font-arabic' : ''}`}>
+              {t('footer.quick.links')}
+            </h4>
             <ul className="space-y-3 md:space-y-4">
-              <li><button onClick={() => scrollToSection("#brands")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end' : ''}`}>
+              <li><button onClick={() => scrollToSection("#brands")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end font-arabic' : ''}`}>
                 {t('nav.about')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </button></li>
-              <li><button onClick={() => scrollToSection("#quotation")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end' : ''}`}>
+              <li><button onClick={() => scrollToSection("#quotation")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end font-arabic' : ''}`}>
                 {t('nav.products')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </button></li>
-              <li><button onClick={() => scrollToSection("#location")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end' : ''}`}>
+              <li><button onClick={() => scrollToSection("#location")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end font-arabic' : ''}`}>
                 {t('nav.branches')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </button></li>
-              <li><button onClick={() => scrollToSection("#contact")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end' : ''}`}>
+              <li><button onClick={() => scrollToSection("#contact")} className={`text-gray-300 hover:text-white transition-colors text-base md:text-lg hover:text-blue-400 relative group min-h-[44px] flex items-center ${language === 'ar' ? 'justify-end font-arabic' : ''}`}>
                 {t('nav.contact')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </button></li>
@@ -102,26 +105,30 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className={`${language === 'ar' ? 'order-3 md:order-1 text-right' : 'order-3'}`}>
-            <h4 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading">{t('footer.contact.info')}</h4>
+            <h4 className={`text-lg md:text-xl font-bold mb-4 md:mb-6 text-blue-400 font-heading ${language === 'ar' ? 'font-arabic' : ''}`}>
+              {t('footer.contact.info')}
+            </h4>
             <div className="space-y-3 md:space-y-4 text-gray-300">
-              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse justify-end font-arabic' : ''}`}>
                 <Mail className={`text-blue-400 flex-shrink-0 ${language === 'ar' ? 'ml-3' : 'mr-3'}`} size={18} /> 
                 <span className="break-all">info@alreem.sa</span>
               </p>
-              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse justify-end font-arabic' : ''}`}>
                 <Phone className={`text-blue-400 flex-shrink-0 ${language === 'ar' ? 'ml-3' : 'mr-3'}`} size={18} /> 
                 <span>+966 504 106 845</span>
               </p>
-              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+              <p className={`flex items-center text-base md:text-lg ${language === 'ar' ? 'flex-row-reverse justify-end font-arabic' : ''}`}>
                 <MapPin className={`text-blue-400 flex-shrink-0 ${language === 'ar' ? 'ml-3' : 'mr-3'}`} size={18} /> 
-                <span>{t('map.address')}</span>
+                <span className={language === 'ar' ? 'font-arabic' : ''}>{t('map.address')}</span>
               </p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 pt-6 md:pt-8 text-center text-gray-400 px-4">
-          <p className="text-base md:text-lg">&copy; {t('footer.copyright')}</p>
+          <p className={`text-base md:text-lg ${language === 'ar' ? 'font-arabic' : ''}`}>
+            &copy; 2025 {t('company.name')} - {t('footer.copyright')}
+          </p>
         </div>
       </div>
     </footer>
