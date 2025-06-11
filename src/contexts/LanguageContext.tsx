@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'ar';
@@ -28,6 +29,7 @@ const translations = {
     'hero.years.experience': '10+ Years Experience',
     'hero.parts.available': '5000+ Parts Available',
     'hero.customer.support': '24/7 Customer Support',
+    'hero.our.location': 'Our Location',
     
     // Slideshow
     'slideshow.iveco.title': 'Premium IVECO Parts',
@@ -35,7 +37,7 @@ const translations = {
     'slideshow.man.title': 'Reliable MAN Solutions',
     'slideshow.man.subtitle': 'Engineering Excellence',
     'slideshow.zf.title': 'ZF Transmission Systems',
-    'slideshow.zf.subtitle': 'Advanced Technology',
+    'slideshow.zf.subtitle': 'Advanced Engineering Solutions',
     
     // Brands Section
     'brands.title': 'Authorized Dealer for',
@@ -94,14 +96,15 @@ const translations = {
     'hero.years.experience': '10+ سنة خبرة',
     'hero.parts.available': '5000+ قطعة غيار متوفرة',
     'hero.customer.support': 'دعم العملاء 24/7',
+    'hero.our.location': 'موقعنا',
     
     // Slideshow
     'slideshow.iveco.title': 'قطع غيار إيفيكو المتميزة',
     'slideshow.iveco.subtitle': 'مصممة للأداء المتميز',
     'slideshow.man.title': 'حلول مان الموثوقة',
     'slideshow.man.subtitle': 'تميز في الهندسة',
-    'slideshow.zf.title': 'أنظمة نقل زد إف',
-    'slideshow.zf.subtitle': 'تقنية متقدمة',
+    'slideshow.zf.title': 'أنظمة نقل حركة زد إف',
+    'slideshow.zf.subtitle': 'حلول هندسية متطورة',
     
     // Brands Section
     'brands.title': 'وكيل معتمد لـ',

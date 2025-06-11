@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
@@ -273,10 +272,6 @@ html {
   }
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -288,14 +283,172 @@ html {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
 .animate-slideIn {
   animation: slideIn 0.8s ease-out;
 }
 
-/* Enhanced contrast and readability */
-.high-contrast {
-  color: var(--color-dark);
-  background-color: var(--color-white);
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced slideshow animations */
+.slideshow-enter {
+  opacity: 0;
+  transform: scale(1.05) translateY(20px);
+}
+
+.slideshow-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slideshow-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.slideshow-exit-active {
+  opacity: 0;
+  transform: scale(0.95) translateY(-20px);
+  transition: all 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+/* Enhanced button animations */
+.btn-primary, .btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-primary::before, .btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before, .btn-secondary:hover::before {
+  left: 100%;
+}
+
+/* Enhanced mobile performance */
+@media (max-width: 768px) {
+  /* Reduce motion for better mobile performance */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fadeInUp {
+      animation-duration: 0.4s;
+    }
+    
+    .animate-slideIn {
+      animation-duration: 0.5s;
+    }
+  }
+  
+  /* Better touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Optimize for mobile browsers */
+  .slideshow-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print styles for better static compatibility */
+@media print {
+  .slideshow-container,
+  .whatsapp-button,
+  .scroll-to-top {
+    display: none !important;
+  }
+  
+  .brands-section,
+  .quotation-section,
+  .map-section {
+    page-break-inside: avoid;
+  }
+}
+
+/* Focus styles for better accessibility */
+button:focus-visible, 
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--color-dark);
+  }
+  
+  .text-gradient {
+    background: var(--color-dark);
+    color: var(--color-dark);
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
 }
 
 /* Professional spacing */
@@ -337,29 +490,5 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus styles for better accessibility */
-button:focus-visible, 
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .card {
-    border: 2px solid var(--color-dark);
-  }
-  
-  .text-gradient {
-    background: var(--color-dark);
-    color: var(--color-dark);
-    -webkit-background-clip: unset;
-    background-clip: unset;
   }
 }
