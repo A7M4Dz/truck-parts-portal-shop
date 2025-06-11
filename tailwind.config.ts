@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4626c8f429bfbc7652e6ad46d181407449b46550
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,9 +22,12 @@ export default {
 			}
 		},
 		extend: {
+<<<<<<< HEAD
 			fontFamily: {
 				sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
 			},
+=======
+>>>>>>> 4626c8f429bfbc7652e6ad46d181407449b46550
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -65,12 +71,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+<<<<<<< HEAD
 				},
 				linkedin: {
 					blue: '#0A66C2',
 					'blue-hover': '#084c94',
 					gray: '#666666',
 					'light-gray': '#f3f2ef'
+=======
+>>>>>>> 4626c8f429bfbc7652e6ad46d181407449b46550
 				}
 			},
 			borderRadius: {
@@ -94,6 +103,7 @@ export default {
 					to: {
 						height: '0'
 					}
+<<<<<<< HEAD
 				},
 				'pulse-blue': {
 					'0%, 100%': {
@@ -112,13 +122,19 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+=======
+>>>>>>> 4626c8f429bfbc7652e6ad46d181407449b46550
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
+<<<<<<< HEAD
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-blue': 'pulse-blue 2s infinite',
 				'scale-in': 'scale-in 0.2s ease-out'
+=======
+				'accordion-up': 'accordion-up 0.2s ease-out'
+>>>>>>> 4626c8f429bfbc7652e6ad46d181407449b46550
 			}
 		}
 	},
