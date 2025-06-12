@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -9,7 +9,7 @@ const TruckSlideshow = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { t } = useLanguage();
 
-  const slides = [
+  const slides = useMemo(() => [
     {
       id: 1,
       image: "/lovable-uploads/360531dc-e9c5-4d78-9d06-90c9a2f09e3c.png",
@@ -42,42 +42,29 @@ const TruckSlideshow = () => {
       title: t('slideshow.iveco.title'),
       subtitle: t('slideshow.iveco.subtitle')
     }
-  ];
+  ], [t]);
 
-  useEffect(() => {
-    if (!isPlaying) return;
-    
-    const timer = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setIsTransitioning(false);
-      }, 150);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [slides.length, isPlaying]);
-
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setIsTransitioning(false);
     }, 150);
-  };
+  }, [slides.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
       setIsTransitioning(false);
     }, 150);
-  };
+  }, [slides.length]);
 
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
+  const togglePlayPause = useCallback(() => {
+    setIsPlaying(prev => !prev);
+  }, []);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     if (index !== currentSlide) {
       setIsTransitioning(true);
       setTimeout(() => {
@@ -85,25 +72,27 @@ const TruckSlideshow = () => {
         setIsTransitioning(false);
       }, 150);
     }
-  };
+  }, [currentSlide]);
 
-  const scrollToLocation = () => {
+  const scrollToLocation = useCallback(() => {
     const element = document.querySelector("#location");
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
-  const scrollToQuotation = () => {
+  const scrollToQuotation = useCallback(() => {
     const element = document.querySelector("#quotation");
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+    
+    const timer = setInterval(nextSlide, 6000);
+    return () => clearInterval(timer);
+  }, [isPlaying, nextSlide]);
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
